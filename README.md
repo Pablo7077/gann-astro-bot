@@ -1,40 +1,34 @@
-# 🔮 Gann Astro Bot v1.0
+# Gann Market Bot
 
-**W.D. Gann Western Astrology + Market Analysis Engine**
+A beginner-friendly local Python project that uses modern western / Gann-style astrology-inspired market timing ideas for research, analysis, reporting, and backtesting.
 
-Applies W.D. Gann's original techniques — Square of Nine, Gann Angles,
-Time Cycles, Planetary Aspects, Cardinal Ingresses — to analyze market turns.
+## What this project does
+- Daily signal engine for a symbol like `nifty`, `AAPL`, `BTC-USD`
+- Gann-style modules: aspects, seasonal points, time cycles, square-of-nine-style levels
+- Backtester that compares tool signals with actual market data
+- Streamlit dashboard for local use
+- Text reports for daily, weekly, and monthly analysis
 
-Works with ANY market: Nifty, Bitcoin, Gold, NASDAQ, individual stocks.
+## Quick start
+1. Install Python 3.11 from python.org.
+2. Clone your repository with GitHub Desktop.
+3. Open Terminal in the project folder.
+4. Run:
+   ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   python main.py --quick
+   streamlit run app.py
+   ```
 
----
+## Project structure
+- `core/` -> astrology + Gann analysis helpers
+- `market/` -> market data fetch + symbol mapping
+- `analysis/` -> projection engine + backtester
+- `reports/` -> daily/weekly/monthly report generators
+- `app.py` -> Streamlit dashboard
+- `main.py` -> command line entry point
 
-## 🌟 Features
-
-| Module | Description |
-|--------|-------------|
-| 🪐 Planetary Positions | Tropical (Western) positions with dignity scores |
-| 📐 Square of Nine | Gann's price wheel — support/resistance levels |
-| 📐 Gann Angles | 1x1, 2x1, 1x2 projections from major pivots |
-| ⏱️ Time Cycles | 90/180/270/360-day cycles from any pivot date |
-| 🔗 Planetary Aspects | Conjunction, Square, Trine, Opposition signals |
-| 🌞 Cardinal Ingresses | Equinoxes & solstices as turning point markers |
-| ℞ Retrograde Analysis | Mercury/Venus/Mars retrograde market effects |
-| 🏭 Sector Rotation | Planet dignity → industry sector signals |
-| 📊 Deep Backtester | 15+ factors tested against historical market data |
-| 🌐 Web Dashboard | Streamlit browser-based interface |
-
-## 🚀 Quick Start
-
-```bash
-pip install -r requirements.txt
-python main.py --quick
-python main.py --project nifty
-python main.py --levels 24000
-python main.py --backtest nifty
-streamlit run dashboard/app.py
-```
-
-## ⚠️ Disclaimer
-This is a **research and education tool only**. Never trade real money
-based solely on astrological analysis.
+## Important note
+This is a research tool, not financial advice.
